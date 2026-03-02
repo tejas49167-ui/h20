@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>H20</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
 </head>
 
 <body>
-        <h2>Histagram</h2>
-        <h4>
-            
-        <a href="https://instagram.com/user_harshith" target="_blank" class="logo-link">
-            Premium chat
-        
-        </a>
-        </h4>
 
-<div id="chat"></div>
- 
-<div class="input-area">
-  <input type="text" id="userInput" placeholder="Chat with H20...">
-  <button onclick="sendMessage()">Send</button>
+<div class="chat-container">
+
+    <div class="header">
+        H20
+        <br>
+        <a href="https://instagram.com/user_harshith" target="_blank" class="logo-link">
+            Premium Chat
+        </a>
+    </div>
+
+    <div id="chat"></div>
+
+    <div class="input-area">
+        <input type="text" id="userInput" placeholder="Chat with H20...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
 </div>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>

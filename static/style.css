@@ -1,98 +1,106 @@
-
-
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "San Francisco",
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
+/* Center whole screen */
 body {
-  background: linear-gradient(to bottom, #f5f5f7, #ffffff);
   height: 100vh;
+  background: #f5f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main chat card */
+.chat-container {
+  width: 95%;
+  max-width: 420px;
+  height: 85vh;
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
-
-h2 {
+/* Header */
+.header {
   text-align: center;
-  padding: 20px;
-  font-weight: 600;
-  font-size: 22px;
-  color: #1d1d1f;
-}
-
-h4 {
-  text-align: center;
-  padding: 1px;
-  font-weight: 60;
+  padding: 18px;
   font-size: 20px;
+  font-weight: 600;
+  border-bottom: 1px solid #eee;
   color: #1d1d1f;
 }
 
-
-
+/* Chat area */
 #chat {
   flex: 1;
-  padding: 15px;
+  padding: 16px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-
+/* Chat bubbles */
 .user, .ai {
   max-width: 80%;
-  padding: 12px 16px;
-  border-radius: 18px;
-  font-size: 15px;
-  line-height: 1.4;
-  animation: fadeIn 0.3s ease-in-out;
+  padding: 14px 18px;
+  border-radius: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
 }
 
+/* User bubble */
 .user {
   align-self: flex-end;
   background: #0071e3;
   color: white;
-  border-bottom-right-radius: 5px;
+  border-bottom-right-radius: 6px;
 }
 
+/* AI bubble */
 .ai {
   align-self: flex-start;
   background: #e9e9eb;
   color: #1d1d1f;
-  border-bottom-left-radius: 5px;
+  border-bottom-left-radius: 6px;
 }
 
-
+/* Input area */
 .input-area {
   display: flex;
-  padding: 12px;
-  background: rgba(255,255,255,0.9);
-  backdrop-filter: blur(10px);
-  border-top: 1px solid #ddd;
+  padding: 14px;
+  border-top: 1px solid #eee;
+  background: white;
 }
 
+/* Input */
 input {
   flex: 1;
   padding: 12px;
   border-radius: 20px;
   border: 1px solid #ccc;
+  font-size: 16px; /* prevents iPhone zoom */
   outline: none;
-  font-size: 15px;
 }
 
+/* Button */
 button {
   margin-left: 10px;
-  padding: 12px 18px;
+  padding: 12px 16px;
   border-radius: 20px;
   border: none;
   background: #0071e3;
   color: white;
-  font-weight: 500;
+  font-size: 15px;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -101,24 +109,18 @@ button:hover {
   background: #005bb5;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .chat-container {
+    height: 100vh;
+    border-radius: 0;
   }
 }
-
-/* Mobile Optimization */
-@media (max-width: 600px) {
-  h2 {
-    font-size: 18px;
-  }
-
-  .user, .ai {
-    font-size: 14px;
-  }
+.logo-link {
+  text-decoration: none;
+  font-size: 13px;
+  color: #0071e3;
+  font-weight: 500;
+  display: block;
+  margin-top: 5px;
 }

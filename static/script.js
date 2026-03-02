@@ -4,7 +4,7 @@ async function sendMessage() {
 
   if (!message) return;
 
-  addMessage("You: " + message, "user");
+  addMessage(message, "user");
   input.value = "";
 
   const response = await fetch("/chat", {
@@ -16,7 +16,7 @@ async function sendMessage() {
   });
 
   const data = await response.json();
-  addMessage("💦 " + data.reply, "harshith");
+  addMessage(data.reply, "harshith");
 }
 
 function addMessage(text, className) {

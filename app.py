@@ -15,16 +15,19 @@ def home():
 @app.route("/chat", methods=["POST"])
 def chat():
     user_message = request.json["message"].lower()
-    print("User typed:", user_message)   
-    if "name" in user_message or "who" in user_message:
+    print("User typed:", user_message)  
+    if "girl" in user_message :
+        return jsonify({"reply": "Varsha is a good girl and THANGAALIYAL ENDU song queen for me\nPeople call me Harshith because im happy about her"})
+    elif "what" in user_message : 
+        return jsonify({"reply": "\nI'm Harshith\nfor your question it's gods wish"})
+    elif "how" in user_message : 
+        return jsonify({"reply": "\nI'm Fine how are you machi?"})
+    elif "friend" in user_message:
+        return jsonify({"reply": "\nMy friends are\n1.Vishwas(Best Friend)\n2.Jeevan(Polite friend)\n3.Nandan(best friend)\n4.Ankitha(Tution friend)\n5.Tejas Gowda S"})
+    elif "name" in user_message or "who" in user_message:
         return jsonify({"reply": "It's me Harshith"})
 
-    elif "girl" in user_message :
-        return jsonify({"reply": "Varsha"})
-
-    elif "friend" in user_message:
-        return jsonify({"reply": "1.Vishwas\n2.Jeevan\n3.Nandan\n4.Ankitha\n5.Tejas Gowda S"})
-
+   
     
     response = requests.post(
         "https://api.groq.com/openai/v1/chat/completions",
