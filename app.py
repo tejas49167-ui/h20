@@ -20,10 +20,12 @@ def chat():
         return jsonify({"reply": "Varsha is a good girl and THANGAALIYAL ENDU song queen for me\nPeople call me Harshith because im happy about her"})
     elif "what" in user_message : 
         return jsonify({"reply": "\nI'm Harshith\nfor your question it's gods wish"})
+    elif "hi" in user_message : 
+        return jsonify({"reply": "\nHelo machi"})
     elif "how" in user_message : 
         return jsonify({"reply": "\nI'm Fine how are you machi?"})
     elif "friend" in user_message:
-        return jsonify({"reply": "\nMy friends are\n1.Vishwas(Best Friend)\n2.Jeevan(Polite friend)\n3.Nandan(best friend)\n4.Ankitha(Tution friend)\n5.Tejas Gowda S"})
+        return jsonify({"reply": "\nNan friends yalaru but some are\n1.Vishwas(Best Friend)\n2.Jeevan(Polite friend)\n3.Nandan(best friend)\n4.Ankitha(Tution friend)\n5.Tejas Gowda S"})
     elif "name" in user_message or "who" in user_message:
         return jsonify({"reply": "It's me Harshith"})
 
