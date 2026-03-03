@@ -18,7 +18,7 @@ def chat():
     print("User typed:", user_message)  
     if "girl" in user_message :
         return jsonify({"reply": "Varsha is a good girl and THANGAALIYAL ENDU song queen for me\nPeople call me Harshith because im happy about her"})
-    elif "ai" in user_message or "chatgpt" in user_message or "gemini" in user_message : 
+    elif "ai" in user_message or "chatgpt" in user_message or "gemini" in user_message or "build" in user_message : 
         return jsonify({"reply": "\nI'm not any any ai model like anything \nI'm Harshith\nfor your question it's gods wish"})
     elif "lowde" in user_message or "gandu" in user_message : 
         return jsonify({"reply": "\nyar gandu?\nOi yar Lowde\nNo bad words"})
