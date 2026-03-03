@@ -22,6 +22,8 @@ def chat():
         return jsonify({"reply": "\nI'm not any any ai model like anything \nI'm Harshith\nfor your question it's gods wish"})
     elif "lowde" in user_message or "gandu" in user_message : 
         return jsonify({"reply": "\nyar gandu?\nOi yar Lowde\nNo bad words"})
+    elif "tejas" in user_message : 
+        return jsonify({"reply": "\nAvn ond dod Lowde ! 😂"})
     elif "what" in user_message : 
         return jsonify({"reply": "\nI'm Harshith\nfor your question it's gods wish"})
     elif "hi" in user_message : 
