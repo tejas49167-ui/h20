@@ -15,24 +15,26 @@ def home():
 @app.route("/chat", methods=["POST"])
 def chat():
     user_message = request.json["message"].lower()
+    u = user_message.split() 
+
     print("User typed:", user_message)  
-    if "girl" in user_message :
-        return jsonify({"reply": "Varsha is a good girl and THANGAALIYAL ENDU song queen for me\nPeople call me Harshith because im happy about her"})
-    elif "ai" in user_message or "chatgpt" in user_message or "gemini" in user_message or "build" in user_message : 
-        return jsonify({"reply": "\nI'm not any any ai model like anything \nI'm Harshith\nfor your question it's gods wish"})
-    elif "lowde" in user_message or "gandu" in user_message : 
-        return jsonify({"reply": "\nyar gandu?\nOi yar Lowde\nNo bad words"})
-    elif "tejas" in user_message : 
-        return jsonify({"reply": "\nAvn ond dod Lowde ! 😂"})
-    elif "what" in user_message : 
+    if "girl" in u or "gf" in u :
+        return jsonify({"reply": "I'm harshith(gay)"})
+    elif "ai" in u or "chatgpt" in u or "gemini" in u or "build" in u : 
+        return jsonify({"reply": "\nI'm not any any ai model like anything \nI'm Harshith\n"})
+    elif "lowde" in u or "gandu" in u or "nkn" in u or "nmn" in u : 
+        return jsonify({"reply": "No bad words"})
+    elif "where" in u : 
+        return jsonify({"reply":"bumi mele akashad keligia \n"})
+    elif "what" in u : 
         return jsonify({"reply": "\nI'm Harshith\nfor your question it's gods wish"})
-    elif "hi" in user_message : 
-        return jsonify({"reply": "\nHelo machi\nTalk english machi otherwise i talk sanskrit"})
-    elif "how" in user_message : 
-        return jsonify({"reply": "\nI'm Fine how are you machi?"})
-    elif "friend" in user_message:
-        return jsonify({"reply": "\nNan friends yalaru but some are\n1.Vishwas(Best Friend)\n2.Jeevan(Polite friend)\n3.Nandan(best friend)\n4.Ankitha(Tution friend)\n5.Tejas Gowda S"})
-    elif "name" in user_message or "who" in user_message:
+    elif "hi" in u : 
+        return jsonify({"reply": "\nHelu\n"})
+    elif "how" in u : 
+        return jsonify({"reply": "\nI'm Fine how are you ?"})
+    elif "friend" in u:
+        return jsonify({"reply": "\nNan friends yalaru but some are\n1.Modi\n2.elon musk\n"})
+    elif "name" in u or "who" in u:
         return jsonify({"reply": "It's me Harshith"})
 
    
@@ -46,7 +48,7 @@ def chat():
         json={
             "model": "llama-3.1-8b-instant",
             "messages": [
-                {"role": "user", "content": user_message}
+                {"role": "user", "content": u}
             ]
         }
     )

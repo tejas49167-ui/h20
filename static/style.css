@@ -1,4 +1,4 @@
-/* Reset */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +6,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Center whole screen */
+
 body {
   height: 100vh;
   background: #f5f5f7;
@@ -15,7 +15,7 @@ body {
   align-items: center;
 }
 
-/* Main chat card */
+
 .chat-container {
   width: 95%;
   max-width: 420px;
@@ -28,7 +28,7 @@ body {
   overflow: hidden;
 }
 
-/* Header */
+
 .header {
   text-align: center;
   padding: 18px;
@@ -38,7 +38,7 @@ body {
   color: #1d1d1f;
 }
 
-/* Chat area */
+
 #chat {
   flex: 1;
   padding: 16px;
@@ -48,7 +48,6 @@ body {
   gap: 12px;
 }
 
-/* Chat bubbles */
 .user, .ai {
   max-width: 80%;
   padding: 14px 18px;
@@ -58,7 +57,7 @@ body {
   word-wrap: break-word;
 }
 
-/* User bubble */
+
 .user {
   align-self: flex-end;
   background: #0071e3;
@@ -66,7 +65,6 @@ body {
   border-bottom-right-radius: 6px;
 }
 
-/* AI bubble */
 .ai {
   align-self: flex-start;
   background: #e9e9eb;
@@ -74,7 +72,7 @@ body {
   border-bottom-left-radius: 6px;
 }
 
-/* Input area */
+
 .input-area {
   display: flex;
   padding: 14px;
@@ -82,17 +80,17 @@ body {
   background: white;
 }
 
-/* Input */
+
 input {
   flex: 1;
   padding: 12px;
   border-radius: 20px;
   border: 1px solid #ccc;
-  font-size: 16px; /* prevents iPhone zoom */
+  font-size: 16px; 
   outline: none;
 }
 
-/* Button */
+
 button {
   margin-left: 10px;
   padding: 12px 16px;
@@ -109,7 +107,7 @@ button:hover {
   background: #005bb5;
 }
 
-/* Mobile responsiveness */
+
 @media (max-width: 600px) {
   .chat-container {
     height: 100vh;
