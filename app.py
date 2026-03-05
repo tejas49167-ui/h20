@@ -48,7 +48,7 @@ def chat():
         json={
             "model": "llama-3.1-8b-instant",
             "messages": [
-                {"role": "user", "content": u}
+                {"role": "user", "content": user_message}
             ]
         }
     )
