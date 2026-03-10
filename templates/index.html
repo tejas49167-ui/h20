@@ -1,33 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>H20</title>
+    <title>H20 Global Messages</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
+    <main class="app-shell">
+        <section class="hero-panel">
+            <p class="eyebrow">Full Stack Flask App</p>
+            <h1>Register, log in, and post to one shared global message room.</h1>
+            <p class="hero-copy">
+                Every authenticated user sees the same live feed. Create an account,
+                sign in, and drop messages into the common stream.
+            </p>
+        </section>
 
-<div class="chat-container">
+        <section class="app-panel">
+            <div class="panel-header">
+                <div>
+                    <p class="panel-kicker">H20</p>
+                    <h2>Global Message App</h2>
+                </div>
+                <button id="logoutButton" class="ghost-button hidden" type="button">Logout</button>
+            </div>
 
-    <div class="header">
-        H20
-        <br>
-        <a href="https://instagram.com/theenameisharshith" target="_blank" class="logo-link">
-            developer harshith
-        </a>
-    </div>
+            <div id="statusMessage" class="status-message hidden"></div>
 
-    <div id="chat"></div>
+            <section id="authView" class="auth-grid">
+                <form id="registerForm" class="card-form">
+                    <h3>Create account</h3>
+                    <label>
+                        <span>Username</span>
+                        <input id="registerUsername" name="username" type="text" minlength="3" maxlength="24" required>
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <input id="registerPassword" name="password" type="password" minlength="6" required>
+                    </label>
+                    <button type="submit">Register</button>
+                </form>
 
-    <div class="input-area">
-        <input type="text" id="userInput" placeholder="Chat...">
-        <button onclick="sendMessage()">Send</button>
-    </div>
+                <form id="loginForm" class="card-form muted-card">
+                    <h3>Login</h3>
+                    <label>
+                        <span>Username</span>
+                        <input id="loginUsername" name="username" type="text" required>
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <input id="loginPassword" name="password" type="password" required>
+                    </label>
+                    <button type="submit">Login</button>
+                </form>
+            </section>
 
-</div>
+            <section id="chatView" class="chat-view hidden">
+                <div class="feed-header">
+                    <div>
+                        <p class="panel-kicker">Signed in as</p>
+                        <strong id="currentUser"></strong>
+                    </div>
+                    <p class="feed-caption">Shared room for all registered users</p>
+                </div>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+                <div id="messages" class="messages"></div>
+
+                <form id="messageForm" class="message-form">
+                    <textarea id="messageInput" maxlength="400" placeholder="Write a message for everyone..." required></textarea>
+                    <button type="submit">Post message</button>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
