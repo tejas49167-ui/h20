@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Global Chat{% endblock %}
+{% block content %}
+<div class="card chat-shell">
+    <div class="chat-header">
+        <div>
+            <h1>Global Message App</h1>
+            <p>Logged in as <strong>{{ user.username }}</strong></p>
+        </div>
+        <a class="logout" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <form method="POST" class="message-form">
+        <input type="text" name="message" maxlength="500" placeholder="Write a message to everyone..." required>
+        <button type="submit">Send</button>
+    </form>
+
+    <div class="messages">
+        {% for message in messages %}
+            <div class="message-item">
+                <div class="meta">
+                    <strong>{{ message.username }}</strong>
+                    <span>{{ message.created_at[:19].replace('T', ' ') }} UTC</span>
+                </div>
+                <p>{{ message.content }}</p>
+            </div>
+        {% else %}
+            <p class="empty">No messages yet. Be the first one to say hi 👋</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
